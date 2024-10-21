@@ -124,3 +124,29 @@ $arrayBack = $object->toArray();
 ``` 
 
 Ini adalah cara pemakaian dasar dari class `ObjectIterable` yang Anda buat untuk mengonversi array ke objek dan memberikan akses yang lebih fleksibel dengan fitur case-insensitive serta otomatisasi dalam penanganan properti berjenis array.
+
+
+Dengan object iterable, kamu bisa define keys array di PHP juga lho (Kaya TypeScript hehe). Ga percaya? Yuk liat contohnya
+```php
+trait MahasiswaTrait
+{
+    public $nama;
+    public $kelas;
+    public $jurusan;
+}
+
+class Mahasiswa extends ObjectIterable
+{
+    use MahasiswaTrait;
+}
+
+$dataMahasiswa = [
+    'nama' => 'Reza Khoirul',
+    'kelas' => '10',
+    'jurusan' => 'RPL',
+];
+
+$resMahasiswa = new Mahasiswa($dataMahasiswa);
+
+echo 'Nama: ' . $resMahasiswa->nama; // 'Reza Khoirul'
+```
