@@ -115,7 +115,7 @@ $data = [
     ]
 ];
 
-$object = new \App\Utils\ObjectIterable($data);
+$object = objectIterable($data);
 
 echo $object->name; // Alice
 echo $object->address->city; // Wonderland
