@@ -17,7 +17,7 @@ $array = [
     ],
 ];
 
-$objectIterable = new \App\Utils\ObjectIterable($array);
+$objectIterable = objectIterable($array);
 ```
 
 ### 2. **Akses Properti dengan Case Insensitive**
